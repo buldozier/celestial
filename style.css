@@ -1,0 +1,478 @@
+/* Zero-styles */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: geometricPrecision;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Golos Text VF';
+    src: url("fonts/golos-text_regular.woff2"),
+    url("fonts/golos-text_regular.woff");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Golos Text VF';
+    src: url("fonts/golos-text_medium.woff2"),
+    url("fonts/golos-text_medium.woff");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Golos Text VF';
+    src: url("fonts/golos-text_demibold.woff2"),
+    url("fonts/golos-text_demibold.woff");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Golos Text VF';
+    src: url("fonts/golos-text_bold.woff2"),
+    url("fonts/golos-text_bold.woff");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+/* Variables */
+:root {
+    /* label */
+    --label-white: #FFFFFF;
+    --label-black: #212328;
+    --label-grey: #8285A5;
+
+    /* accent */
+    --accent-light-blue: #E5F1FF;
+    --accent-blue-1: #0064D8;
+    --accent-blue-2: #0056D8;
+
+    /* background */
+    --bg-light-blue: #F2F7FD;
+    --bg-white: #FFFFFF;
+
+    /* overlay */
+    --overlay-black65: #1B225C;
+    --overlay-white20: #FFFFFF;
+
+    /* separator */
+    --separator-grey: #E7E7E7;
+
+    /* system */
+    --system-red: #E44646;
+    --system-grey: #F8F8F8;
+}
+
+body {
+    font-family: Golos Text VF, serif;
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: var(--label-black);
+    margin-bottom: 65px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* styles */
+
+.container {
+    width: 373px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* header-mobile */
+
+.header-mobile {
+    border-bottom: 1px solid var(--separator-grey, #E7E7E7);
+}
+
+.header-mobile__inner {
+    display: flex;
+    padding: 4px 0;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.header-mobile__logo img {
+    width: 112px;
+    height: 56px;
+}
+
+.header-mobile__icons {
+    display: flex;
+    gap: 6px;
+}
+
+.header-mobile__icon {
+    padding: 10px;
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    background: var(--bg-light-blue, #F2F7FD);
+}
+
+.header-mobile__icon svg{
+    width: 24px;
+    height: 24px;
+}
+
+/* tab-bar mobile*/
+
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    padding: 4px 0 7px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-top: 0.5px solid rgba(60, 60, 67, 0.36);
+    background: var(--bg-white, #FFF);
+}
+
+.tab-bar__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.tab-bar__item {
+    display: flex;
+    width: 100%;
+    padding: 7px 0 3px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.tab-bar__item p {
+    color: var(--label-grey);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.tab-bar__item-active p{
+    color: var(--accent-blue-1);
+}
+
+.tab-bar__item-active svg path{
+    stroke: var(--accent-blue-1);
+}
+
+
+/* banners */
+.banners {
+    position: relative;
+    margin-top: 18px;
+}
+
+.banner {
+
+}
+
+.banner img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--label-white, #FFF);
+
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* advantages */
+
+.advantages {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.advantages-swiper {
+    padding: 0 calc((100vw - 343px) / 2);
+}
+
+.advantages__card {
+    display: flex;
+    height: 52px;
+    border-radius: 12px;
+    background-color:  var(--bg-light-blue);
+}
+
+.advantages__card:nth-child(1) {
+    width: 206px !important;
+}
+
+.advantages__card:nth-child(2) {
+    width: 165px !important;
+}
+
+.advantages__card:nth-child(3) {
+    width: 173px !important;
+}
+
+.advantages__card:nth-child(4) {
+    width: 203px !important;
+}
+
+.advantages__card:nth-child(5) {
+    width: 215px !important;
+}
+
+
+.advantages__card-svg {
+    padding: 10px;
+}
+
+.advantages__card p {
+    padding: 6px 20px 6px 0;
+
+}
+
+/* our news */
+.our-news {
+    margin-top: 40px;
+}
+
+.our-news__list {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    gap: 16px 11px;
+}
+
+.our-news__item {
+    font-weight: 600;
+    text-align: center;
+}
+
+.our-news__item img{
+    border-radius: 12px;
+    width: 100%;
+}
+
+.our-news__item p {
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.big-item {
+    grid-column: 1/3;
+    grid-row: 1/4;
+    display: none;
+}
+
+.our-news__item .item2 {
+    background: #7CD3FF;
+}
+
+.our-news__item .item3 {
+    background: #FFE5C3;
+}
+
+.our-news__item .item4 {
+    background: #FFF27A;
+}
+
+.our-news__item .item5 {
+    background: #76EFC3;
+}
+
+.our-news__item .item6 {
+    background: #FFBC6D;
+}
+
+.our-news__item .item7 {
+    background: #5FACFF;
+}
+
+.our-news__item .item8 {
+    background: #F1F1F1;
+}
+
+.our-news__item .item9 {
+    background: #FFB580;
+}
+
+/* big banner */
+
+.big-banner {
+    margin-top: 40px;
+}
+
+/* shops */
+
+.shops {
+    margin-top: 40px;
+}
+
+.shops__city {
+    position:  relative;
+    margin-top: 20px;
+}
+
+.shops__city-select {
+    width: 100%;
+    padding: 28px 44px 8px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 10px;
+    appearance: none;
+    outline: none;
+    border: 1px solid var(--separator-grey, #E7E7E7);
+    background-image: url("img/icons/Icon-right.png");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.shops__city-select:hover {
+    border: 1px solid var(--accent-blue-2);
+}
+
+.shops__city label {
+    position: absolute;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--label-grey);
+    top: 8px;
+    left: 12px;
+}
+
+.shops__bottom {
+    margin-top: 10px;
+}
+
+.shops__map {
+    height: 400px;
+}
+
+[class*="copyrights-pane"] {
+    display: none !important;
+}
+
+/* баллун */
+
+.balloon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    border-radius: 16px 16px 0 0;
+    background: var(--label-white);
+    transform: translateY(300px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.balloon-active {
+    transform: translateY(0);
+}
+
+.balloon__inner {
+    display: flex;
+    padding: 64px 16px 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.balloon__header {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.balloon__content {
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.balloon__navigation {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.balloon__navigation p {
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.balloon__navigation-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.balloon__navigation-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 24px;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--bg-light-blue);
+}
+
+.balloon__close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 5px;
+    border-radius: 99px;
+    background: var(--bg-light-blue, #F2F7FD);
+}
