@@ -99,6 +99,10 @@ html {
     --system-grey: #F8F8F8;
 }
 
+.main-hidden {
+    display: none;
+}
+
 body {
     font-family: Golos Text VF, serif;
     height: 100%;
@@ -162,6 +166,7 @@ h1 {
 
 .tab-bar {
     position: fixed;
+    z-index: 100;
     bottom: 0;
     left: 0;
     display: flex;
@@ -210,10 +215,6 @@ h1 {
 .banners {
     position: relative;
     margin-top: 18px;
-}
-
-.banner {
-
 }
 
 .banner img {
@@ -405,7 +406,218 @@ h1 {
     display: none !important;
 }
 
-/* баллун */
+/* menu */
+
+.mobile-menu {
+    display: none;
+    width: 100%;
+    padding-bottom: 65px;
+    padding-top: 28px;
+    background: var(--bg-light-blue);
+    position: absolute;
+    top: 64px;
+    z-index: 10;
+}
+
+.mobile-menu-active {
+    display: block;
+}
+
+
+.mobile-menu__inner {
+    width: 100%;
+}
+
+/* menu local */
+
+.mobile-menu__local {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 10px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: var(--label-white);
+}
+
+.mobile-menu__local .icon-and-label {
+    display: flex;
+}
+
+.mobile-menu__local .icon-and-label p{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-left: 6px;
+}
+
+/* menu catalog */
+
+.mobile-menu__catalog {
+    position: relative;
+    margin-top: 32px;
+    display: flex;
+    padding: 18px 10px;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--accent-blue-1);
+}
+
+.mobile-menu__catalog p {
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--label-white);
+}
+.mobile-menu__catalog img {
+    position: absolute;
+    right: 11px;
+    bottom: 0;
+}
+
+/* lists */
+
+.list-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item {
+    padding: 16px 0;
+    color: var(--label-black);
+    font-weight: 600;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--separator-grey);
+}
+
+/* menu about-company */
+
+.mobile-menu__about-company {
+    margin-top: 16px;
+    padding: 0 10px;
+    border-radius: 12px;
+    background: var(--label-white);
+}
+
+.mobile-menu__about-company p {
+    padding-top: 16px;
+    color: var(--label-grey);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.about-company-list__item:last-child {
+    border: none;
+}
+
+/* menu for-byers */
+
+.mobile-menu__for-byers {
+    margin-top: 16px;
+    padding: 0 10px;
+    border-radius: 12px;
+    background: var(--label-white);
+}
+
+.mobile-menu__for-byers p {
+    padding-top: 16px;
+    color: var(--label-grey);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.for-byers-list__item:last-child {
+    border: none;
+}
+
+/* menu contacts */
+
+.mobile-menu__contacts {
+    margin-top: 8px;
+    padding: 16px 0;
+}
+
+.contact-phones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.contact-phone {
+    color: var(--label-black);
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.contact-place {
+    margin-top: 10px;
+    color: var(--label-grey);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.social-icon {
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--label-white);
+}
+
+/* catalog */
+.catalog {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+}
+
+.catalog__header{
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
+    border-bottom: 1px solid var(--separator-grey);
+    background: var(--label-white);
+}
+
+.catalog__header-back,
+.catalog__header-close {
+    height: 24px;
+}
+
+.catalog__header-back {
+    margin: 10px 26px 10px 10px;
+}
+
+
+
+.catalog__header-title {
+    color: var(--label-black);
+    text-align: center;
+
+    font-weight: 600;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.catalog__header-close {
+    margin: 10px 18px;
+}
+
+
+/* balloon */
 
 .balloon {
     position: fixed;

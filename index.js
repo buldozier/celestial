@@ -95,8 +95,26 @@ function init() {
 
 ymaps.ready(init);
 
+// Menu
 
-// Баллун
+const menuBtn = document.querySelector(".header-mobile__menu")
+const menu = document.querySelector(".mobile-menu")
+const main = document.querySelector("main")
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('mobile-menu-active')
+    main.classList.toggle('main-hidden')
+})
+
+// Catalog
+
+const goBack = document.querySelector(".catalog__header-back")
+
+goBack.addEventListener("click", () => {
+    console.log("click")
+})
+
+// Balloon
 
 const balloon = document.querySelector(".balloon")
 const balloonCloseBtn = document.querySelector('.balloon__close-btn')
