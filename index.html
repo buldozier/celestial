@@ -30,9 +30,12 @@
                             <path d="M17 17L21 21M3 11C3 13.1217 3.84285 15.1566 5.34315 16.6569C6.84344 18.1571 8.87827 19 11 19C13.1217 19 15.1566 18.1571 16.6569 16.6569C18.1571 15.1566 19 13.1217 19 11C19 8.87827 18.1571 6.84344 16.6569 5.34315C15.1566 3.84285 13.1217 3 11 3C8.87827 3 6.84344 3.84285 5.34315 5.34315C3.84285 6.84344 3 8.87827 3 11Z" stroke="#0064D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <div class="header-mobile__menu header-mobile__icon menu-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <div class="header-mobile__icon menu-btn">
+                        <svg class="header-mobile__menu_open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M21.375 12C21.375 12.2984 21.2565 12.5845 21.0455 12.7955C20.8345 13.0065 20.5484 13.125 20.25 13.125H3.75C3.45163 13.125 3.16548 13.0065 2.9545 12.7955C2.74353 12.5845 2.625 12.2984 2.625 12C2.625 11.7016 2.74353 11.4155 2.9545 11.2045C3.16548 10.9935 3.45163 10.875 3.75 10.875H20.25C20.5484 10.875 20.8345 10.9935 21.0455 11.2045C21.2565 11.4155 21.375 11.7016 21.375 12ZM3.75 7.125H20.25C20.5484 7.125 20.8345 7.00647 21.0455 6.7955C21.2565 6.58452 21.375 6.29837 21.375 6C21.375 5.70163 21.2565 5.41548 21.0455 5.2045C20.8345 4.99353 20.5484 4.875 20.25 4.875H3.75C3.45163 4.875 3.16548 4.99353 2.9545 5.2045C2.74353 5.41548 2.625 5.70163 2.625 6C2.625 6.29837 2.74353 6.58452 2.9545 6.7955C3.16548 7.00647 3.45163 7.125 3.75 7.125ZM20.25 16.875H3.75C3.45163 16.875 3.16548 16.9935 2.9545 17.2045C2.74353 17.4155 2.625 17.7016 2.625 18C2.625 18.2984 2.74353 18.5845 2.9545 18.7955C3.16548 19.0065 3.45163 19.125 3.75 19.125H20.25C20.5484 19.125 20.8345 19.0065 21.0455 18.7955C21.2565 18.5845 21.375 18.2984 21.375 18C21.375 17.7016 21.2565 17.4155 21.0455 17.2045C20.8345 16.9935 20.5484 16.875 20.25 16.875Z" fill="#0064D8"/>
+                        </svg>
+                        <svg class="header-mobile__menu_close btn-hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                 </div>
@@ -50,13 +53,13 @@
                                 <img src="img/banner1.jpg" alt="баннер">
                             </div>
                             <div class="swiper-slide banner">
-                                <img src="img/banner1.jpg" alt="баннер">
+                                <img src="img/banner2.jpg" alt="баннер">
                             </div>
                             <div class="swiper-slide banner">
                                 <img src="img/banner1.jpg" alt="баннер">
                             </div>
                             <div class="swiper-slide banner">
-                                <img src="img/banner1.jpg" alt="баннер">
+                                <img src="img/banner2.jpg" alt="баннер">
                             </div>
                         </div>
                     </div>
@@ -191,6 +194,34 @@
                 <div class="shops__map" id="map"></div>
             </div>
         </div>
+        <!--  Balloon  -->
+        <div class="balloon">
+            <div class="balloon__inner">
+                <div class="balloon__header"></div>
+                <div class="balloon__content">
+                    <p class="balloon__content-address"></p>
+                    <p class="balloon__content-phone"></p>
+                    <p class="balloon__content-workTime"></p>
+                </div>
+                <div class="balloon__navigation">
+                    <p>Построить маршрут</p>
+                    <div class="balloon__navigation-buttons">
+                        <div class="balloon__navigation-button">
+                            <img src="img/yandex_navigator 1.png" alt="Яндекс навигатор">
+                        </div>
+                        <div class="balloon__navigation-button">
+                            <img src="img/Google_Maps_Logo_2020.png" alt="Гугл карты">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="balloon__close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="#0064D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+        </div>
     </main>
     <!-- Tab-bar -->
     <div class="tab-bar">
@@ -219,7 +250,7 @@
                 </svg>
                 <p>Избранное</p>
             </div>
-            <div class="tab-bar__item">
+            <div id="show-sign" class="tab-bar__item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                     <path d="M4.771 18.346C4.771 18.346 7 15.5 12.5 15.5C18 15.5 20.23 18.346 20.23 18.346M12.5 2C6.977 2 2.5 6.477 2.5 12C2.5 17.523 6.977 22 12.5 22C18.023 22 22.5 17.523 22.5 12C22.5 6.477 18.023 2 12.5 2ZM12.5 12C13.2956 12 14.0587 11.6839 14.6213 11.1213C15.1839 10.5587 15.5 9.79565 15.5 9C15.5 8.20435 15.1839 7.44129 14.6213 6.87868C14.0587 6.31607 13.2956 6 12.5 6C11.7043 6 10.9413 6.31607 10.3787 6.87868C9.81607 7.44129 9.5 8.20435 9.5 9C9.5 9.79565 9.81607 10.5587 10.3787 11.1213C10.9413 11.6839 11.7043 12 12.5 12Z" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -314,15 +345,15 @@
         </div>
     </aside>
     <!-- Catalog -->
-    <section class="catalog">
+    <section class="catalog catalog-hidden">
         <div class="catalog__header">
-            <div class="catalog__header-back">
+            <div id="catalog-back" class="catalog__header-back">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M15.7957 18.7041C16.0071 18.9154 16.1258 19.2021 16.1258 19.501C16.1258 19.7999 16.0071 20.0865 15.7957 20.2978C15.5844 20.5092 15.2977 20.6279 14.9989 20.6279C14.7 20.6279 14.4133 20.5092 14.202 20.2978L6.70198 12.7978C6.5971 12.6933 6.51388 12.5691 6.4571 12.4324C6.40032 12.2956 6.37109 12.149 6.37109 12.001C6.37109 11.8529 6.40032 11.7063 6.4571 11.5696C6.51388 11.4328 6.5971 11.3086 6.70198 11.2041L14.202 3.7041C14.4133 3.49276 14.7 3.37402 14.9989 3.37402C15.2977 3.37402 15.5844 3.49276 15.7957 3.7041C16.0071 3.91544 16.1258 4.20209 16.1258 4.50097C16.1258 4.79986 16.0071 5.08651 15.7957 5.29785L9.09354 12L15.7957 18.7041Z" fill="#212328"/>
                 </svg>
             </div>
             <p class="catalog__header-title" >Каталог товаров</p>
-            <div class="catalog__header-close">
+            <div id="catalog-close"  class="catalog__header-close">
                 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -331,42 +362,316 @@
         </div>
         <div class="catalog__categories">
             <div class="container">
-                <ul class="catalog__list">
-                    <li>прив</li>
-                    <li>здарова</li>
+                <ul class="catalog__list list-items">
+                    <li class="catalog__item list-item">
+                        <div class="catalog__item-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <mask id="mask0_173_1359" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                                    <path d="M0 0H24V24H0V0Z" fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0_173_1359)">
+                                    <path d="M22 12H23M12 2V1M12 23V22M20 20L19 19M20 4L19 5M4 20L5 19M4 4L5 5M1 12H2M9.952 9.623L11.511 6.318C11.553 6.22337 11.6216 6.14295 11.7084 6.08652C11.7952 6.03008 11.8965 6.00003 12 6.00003C12.1035 6.00003 12.2048 6.03008 12.2916 6.08652C12.3784 6.14295 12.447 6.22337 12.489 6.318L14.048 9.623L17.533 10.156C17.98 10.224 18.158 10.8 17.835 11.13L15.313 13.7L15.908 17.331C15.985 17.798 15.517 18.153 15.117 17.933L12 16.218L8.883 17.933C8.483 18.153 8.015 17.798 8.092 17.331L8.687 13.701L6.165 11.13C5.842 10.8 6.02 10.224 6.467 10.156L9.952 9.623Z" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                            <p>
+                                Актуальные
+                            </p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <div class="catalog__item-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.5 16C15.6326 16 15.7598 15.9473 15.8536 15.8536C15.9473 15.7598 16 15.6326 16 15.5C16 15.3674 15.9473 15.2402 15.8536 15.1464C15.7598 15.0527 15.6326 15 15.5 15C15.3674 15 15.2402 15.0527 15.1464 15.1464C15.0527 15.2402 15 15.3674 15 15.5C15 15.6326 15.0527 15.7598 15.1464 15.8536C15.2402 15.9473 15.3674 16 15.5 16ZM8.5 9C8.63261 9 8.75979 8.94732 8.85355 8.85355C8.94732 8.75979 9 8.63261 9 8.5C9 8.36739 8.94732 8.24021 8.85355 8.14645C8.75979 8.05268 8.63261 8 8.5 8C8.36739 8 8.24021 8.05268 8.14645 8.14645C8.05268 8.24021 8 8.36739 8 8.5C8 8.63261 8.05268 8.75979 8.14645 8.85355C8.24021 8.94732 8.36739 9 8.5 9Z" fill="#8285A5" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 8L8 16" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <p>
+                                Акции
+                            </p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Новогодние товары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Галантерея и аксессуары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Хозтовары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Праздники и подарки
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Интерьерные товары для дома
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Домашний текстиль
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Творчество
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Туризм и активный отдых
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Товары для рассады
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Игрушки, товары для детей
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Пикник
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Спортивные товары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Товары для животных
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Интерьерное освещение
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Одежда, обувь, головные уборы
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Снегоуборочный инвентарь
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Бассейны и аксессуары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Средства гигиены и бытовая химия
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Товары для бани и сауны
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Строительство и ремонт
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="catalog__item list-item">
+                        <p>
+                            Автотовары
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M8 5L13 10L8 15" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
                 </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Category -->
+    <section class="catalog category category-hidden">
+        <div class="catalog__header">
+            <div id="category-back" class="catalog__header-back category__header-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15.7957 18.7041C16.0071 18.9154 16.1258 19.2021 16.1258 19.501C16.1258 19.7999 16.0071 20.0865 15.7957 20.2978C15.5844 20.5092 15.2977 20.6279 14.9989 20.6279C14.7 20.6279 14.4133 20.5092 14.202 20.2978L6.70198 12.7978C6.5971 12.6933 6.51388 12.5691 6.4571 12.4324C6.40032 12.2956 6.37109 12.149 6.37109 12.001C6.37109 11.8529 6.40032 11.7063 6.4571 11.5696C6.51388 11.4328 6.5971 11.3086 6.70198 11.2041L14.202 3.7041C14.4133 3.49276 14.7 3.37402 14.9989 3.37402C15.2977 3.37402 15.5844 3.49276 15.7957 3.7041C16.0071 3.91544 16.1258 4.20209 16.1258 4.50097C16.1258 4.79986 16.0071 5.08651 15.7957 5.29785L9.09354 12L15.7957 18.7041Z" fill="#212328"/>
+                </svg>
+            </div>
+            <p class="catalog__header-title category__title">Категория</p>
+            <div id="category-close" class="catalog__header-close">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </div>
 
         </div>
-    </section>
-    <!--  Balloon  -->
-    <div class="balloon">
-        <div class="balloon__inner">
-            <div class="balloon__header"></div>
-            <div class="balloon__content">
-                <p class="balloon__content-address"></p>
-                <p class="balloon__content-phone"></p>
-                <p class="balloon__content-workTime"></p>
-            </div>
-            <div class="balloon__navigation">
-                <p>Построить маршрут</p>
-                <div class="balloon__navigation-buttons">
-                    <div class="balloon__navigation-button">
-                        <img src="img/yandex_navigator 1.png" alt="Яндекс навигатор">
+        <div class="category__subcategories">
+            <div class="container">
+                <div class="category__inner">
+                    <div class="category__new">
+                        <p>Новинки</p>
                     </div>
-                    <div class="balloon__navigation-button">
-                        <img src="img/Google_Maps_Logo_2020.png" alt="Гугл карты">
-                    </div>
+                    <ul class="category__list list-items">
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="balloon__close-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="#0064D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
+    </section>
+    <!-- SubCategory -->
+    <section class="catalog subcategory subcategory-hidden">
+        <div class="catalog__header">
+            <div id="subcategory-back" class="catalog__header-back category__header-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15.7957 18.7041C16.0071 18.9154 16.1258 19.2021 16.1258 19.501C16.1258 19.7999 16.0071 20.0865 15.7957 20.2978C15.5844 20.5092 15.2977 20.6279 14.9989 20.6279C14.7 20.6279 14.4133 20.5092 14.202 20.2978L6.70198 12.7978C6.5971 12.6933 6.51388 12.5691 6.4571 12.4324C6.40032 12.2956 6.37109 12.149 6.37109 12.001C6.37109 11.8529 6.40032 11.7063 6.4571 11.5696C6.51388 11.4328 6.5971 11.3086 6.70198 11.2041L14.202 3.7041C14.4133 3.49276 14.7 3.37402 14.9989 3.37402C15.2977 3.37402 15.5844 3.49276 15.7957 3.7041C16.0071 3.91544 16.1258 4.20209 16.1258 4.50097C16.1258 4.79986 16.0071 5.08651 15.7957 5.29785L9.09354 12L15.7957 18.7041Z" fill="#212328"/>
+                </svg>
+            </div>
+            <div class="catalog__header-title subcategory__header">
+                <p class="subcategory__header-title_top">Категория</p>
+                <p class="subcategory__header-title_bottom">Подкатегория</p>
+            </div>
+            <div id="subcategory-close" class="catalog__header-close">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
 
-    </div>
+        </div>
+        <div class="subcategories">
+            <div class="container">
+                <div class="subcategories__inner">
+                    <ul class="subcategories__list list-items">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SignIn-->
+    <section class="sign">
+        <div class="container">
+            <div class="sign__inner">
+                <div class="sign__top">
+                    <p>
+                        Вход
+                    </p>
+                    <div id="close-sign" class="sign__close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 19L12 12L19 19M19 5L11.9987 12L5 5" stroke="#0064D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sign__form">
+                    <div class="form-title">
+                        Вход через E-mail:
+                    </div>
+                    <div class="email">
+                        <input class="input" id="email" type="email">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="password">
+                        <input class="input" id="password" type="password">
+                        <label for="password">Пароль</label>
+                        <div class="show-password">
+                            <svg id="show" class="show" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M19.5 16L17.025 12.604M12 17.5V14M4.5 16L6.969 12.612M3 8C6.6 16 17.4 16 21 8" stroke="#8285A5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <svg id="hide" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 13C6.6 5 17.4 5 21 13M12 17C11.606 17 11.2159 16.9224 10.8519 16.7716C10.488 16.6209 10.1573 16.3999 9.87868 16.1213C9.6001 15.8427 9.37913 15.512 9.22836 15.1481C9.0776 14.7841 9 14.394 9 14C9 13.606 9.0776 13.2159 9.22836 12.8519C9.37913 12.488 9.6001 12.1573 9.87868 11.8787C10.1573 11.6001 10.488 11.3791 10.8519 11.2284C11.2159 11.0776 11.606 11 12 11C12.7956 11 13.5587 11.3161 14.1213 11.8787C14.6839 12.4413 15 13.2044 15 14C15 14.7956 14.6839 15.5587 14.1213 16.1213C13.5587 16.6839 12.7956 17 12 17Z" stroke="#0064D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <button class="sign__submit submit-btn">Войти</button>
+                    <div class="sign__forgot">
+                        <p >Забыли пароль?</p>
+                    </div>
+
+                </div>
+                <div class="sign__bottom">
+                    <p>У вас нет аккаунта?</p>
+                    <p>Зарегистрируйтесь</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=82c07598-03a0-49fd-949a-e8d57931411b&lang=ru_RU" type="text/javascript"></script>
     <script src="index.js"></script>
