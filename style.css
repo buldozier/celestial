@@ -123,11 +123,13 @@ h1 {
     width: 373px;
     padding: 0 15px;
     margin: 0 auto;
+
 }
 
 /* header-mobile */
 
 .header-mobile {
+    padding: 0 15px;
     border-bottom: 1px solid var(--separator-grey, #E7E7E7);
 }
 
@@ -194,14 +196,14 @@ h1 {
 
 .tab-bar__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     align-self: stretch;
 }
 
 .tab-bar__item {
     display: flex;
-    width: 100%;
+    width: 75px;
     padding: 7px 0 3px 0;
     flex-direction: column;
     align-items: center;
@@ -234,6 +236,14 @@ h1 {
 .banner img {
     border-radius: 10px;
     width: 100%;
+}
+
+.banner-small {
+    display: block;
+}
+
+.banner-medium {
+    display: none;
 }
 
 .swiper-pagination-bullet {
@@ -327,7 +337,6 @@ h1 {
 .big-item {
     grid-column: 1/3;
     grid-row: 1/4;
-    display: none;
 }
 
 .our-news__item .item2 {
@@ -410,9 +419,16 @@ h1 {
 
 .shops__bottom {
     margin-top: 10px;
+    display: flex;
+    gap: 16px;
+}
+
+.shops__bottom-left {
+    display: none;
 }
 
 .shops__map {
+    width: 100%;
     height: 400px;
 }
 
@@ -590,6 +606,7 @@ h1 {
 }
 
 /* catalog */
+
 .catalog {
     display: block;
     position: absolute;
@@ -977,4 +994,78 @@ input:not(:focus).filled  {
     padding: 5px;
     border-radius: 99px;
     background: var(--bg-light-blue, #F2F7FD);
+}
+
+/* Table */
+
+@media screen and (min-width: 744px) {
+    .container {
+        width: 680px;
+    }
+
+    /* tab-bar table */
+
+    .tab-bar__list {
+        justify-content: center;
+        gap: 32px;
+    }
+
+    /* banners */
+
+    .banners {
+        margin-top: 24px;
+    }
+
+    .banner-small {
+        display: none;
+    }
+
+    .banner-medium {
+        display: block;
+    }
+
+    /* advantages */
+
+    .advantages-swiper {
+        padding: 0 calc((100vw - 650px) / 2);
+    }
+
+    /* our news */
+
+    .our-news__list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-rows: min-content;
+        gap: 16px 11px;
+    }
+
+    .big-item {
+        grid-column: 1/3;
+        grid-row: 1/3;
+    }
+
+    /* shops, ymap */
+
+    .shops__bottom-shop {
+        padding: 20px 0;
+        border-top: 1px solid var(--separator-grey);
+    }
+
+    .shops__bottom-left {
+        display: block;
+        width: 100%;
+    }
+
+    .shops__bottom-header {
+        color: var(--label-black);
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .shops__bottom-content {
+        color: var(--label-black);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
 }
