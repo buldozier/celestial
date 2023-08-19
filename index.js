@@ -1,7 +1,7 @@
 // Inputs
 
 const allInputs = document.querySelectorAll("input")
-const signForm = document.querySelector(".sign")
+const signBlock = document.querySelector(".sign")
 const inputPassword = document.querySelector('.password input')
 const showPasswordBtn = document.querySelector(".show-password")
 const showPasswordSvg = document.querySelector("#hide")
@@ -15,6 +15,7 @@ allInputs.forEach(el => {
             el.classList.remove("filled")
         } else {
             el.classList.add("filled")
+            removeError(el)
         }
     })
 })
@@ -31,22 +32,94 @@ showPasswordBtn.addEventListener('click', () => {
 })
 
 showSignBtn.addEventListener("click", () => {
-    toggleSignForm()
-    document.body.style.overflow = 'hidden';
+    toggleSignBlock()
 })
 
 closeSignBtn.addEventListener("click", () => {
-    toggleSignForm()
-    document.body.style.overflow = '';
+    toggleSignBlock()
 })
 
-function toggleSignForm() {
-    signForm.classList.toggle('sign-show')
-
+function toggleSignBlock() {
+    signBlock.classList.toggle('sign-show')
+    if (signBlock.classList.contains("sign-show")) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
 
 
 
+
+// Validation
+
+const signForm = document.querySelector("#sign-form")
+
+signForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log("отправка формы...")
+
+    if (validationForm(signForm) === true) {
+        console.log("Форма успешно отправлена!")
+        signForm.querySelectorAll("input").forEach(el => {
+            el.value = ''
+            el.classList.remove("filled")
+        })
+        toggleSignBlock()
+    } else {
+        console.log("Валидация не пройдена!")
+    }
+
+    document.body.style.overflow = '';
+})
+
+function validationForm(form) {
+    let result = true
+
+    form.querySelectorAll("input").forEach(el => {
+        const emailDiv = el.parentNode.classList.contains('email')
+        const passwordDiv = el.parentNode.classList.contains('password')
+
+        removeError(el)
+
+        if (el.value === '') {
+            if (emailDiv) {
+                createError(el, "Некорректная почта")
+            }
+
+            if (passwordDiv) {
+                createError(el, "Некорректный пароль")
+            }
+
+            result = false
+        }
+    })
+
+    return result
+}
+
+
+function removeError(input) {
+    const parent = input.parentNode
+
+    if (input.classList.contains("input-error")) {
+        parent.querySelector(".error-helper").remove()
+        input.classList.remove("input-error")
+
+    }
+}
+
+function createError(input, errorText) {
+    const parent = input.parentNode
+    const errorLabel = document.createElement("p")
+
+    parent.classList.add("error")
+    input.classList.add('input-error')
+    errorLabel.classList.add("error-helper")
+    errorLabel.innerText = errorText
+
+    parent.append(errorLabel)
+}
 // Swipers
 
 const slider = document.querySelector('.swiper')
@@ -213,8 +286,6 @@ const subcategoryTitleTop = document.querySelector(".subcategory__header-title_t
 const subcategoryTitleBottom = document.querySelector(".subcategory__header-title_bottom")
 const subcategoryUl = document.querySelector(".subcategories__list")
 
-let categoryList
-
 const categoryGoBackBtn = document.querySelector("#category-back")
 const closeCategoryBtn = document.querySelector("#category-close")
 const subcategoryGoBackBtn = document.querySelector("#subcategory-back")
@@ -369,7 +440,7 @@ catalogLinks.forEach((el) => {  // обработчик нажатия на ка
 
 function openCategory() {  // показать блок категории
     category.classList.remove('category-hidden')
-    categoryList = document.querySelectorAll('.category__item')
+    const categoryList = document.querySelectorAll('.category__item')
     categoryTitle = document.querySelector(".category__title")
 
     if (!category.classList.contains('category-hidden') && subcategory.classList.contains('subcategory-hidden')) {  // создаем обработчики для перехода к подкатегориям
