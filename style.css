@@ -132,7 +132,7 @@ h1 {
 /* styles */
 
 .container {
-    width: 373px;
+    min-width: 373px;
     padding: 0 15px;
     margin: 0 auto;
 
@@ -204,7 +204,8 @@ h1 {
     display: flex;
     padding: 11px 0 7px 0;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     border-top: 0.5px solid rgba(60, 60, 67, 0.36);
     background: var(--bg-white, #FFF);
@@ -212,9 +213,11 @@ h1 {
 
 .tab-bar__list {
     display: flex;
+    margin: 0 auto;
     justify-content: center;
     align-items: flex-start;
     align-self: stretch;
+    max-width: 373px;
 }
 
 .tab-bar__item {
