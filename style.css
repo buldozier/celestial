@@ -9,17 +9,21 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
 }
+
 ul,
 ol,
 li {
     list-style: none;
 }
+
 img {
     vertical-align: top;
 }
+
 h1,
 h2,
 h3,
@@ -29,6 +33,7 @@ h6 {
     font-weight: inherit;
     font-size: inherit;
 }
+
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -46,6 +51,7 @@ html {
     font-display: swap;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Golos Text VF';
     src: url("fonts/golos-text_medium.woff2"),
@@ -54,6 +60,7 @@ html {
     font-display: swap;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Golos Text VF';
     src: url("fonts/golos-text_demibold.woff2"),
@@ -62,6 +69,7 @@ html {
     font-display: swap;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Golos Text VF';
     src: url("fonts/golos-text_bold.woff2"),
@@ -175,7 +183,7 @@ h1 {
     background: var(--bg-light-blue, #F2F7FD);
 }
 
-.header-mobile__icon svg{
+.header-mobile__icon svg {
     width: 24px;
     height: 24px;
 }
@@ -191,7 +199,6 @@ h1 {
 .btn-hidden {
     display: none;
 }
-
 
 
 /* tab-bar mobile*/
@@ -238,11 +245,11 @@ h1 {
     line-height: 1.1;
 }
 
-.tab-bar__item-active p{
+.tab-bar__item-active p {
     color: var(--accent-blue-1);
 }
 
-.tab-bar__item-active svg path{
+.tab-bar__item-active svg path {
     stroke: var(--accent-blue-1);
 }
 
@@ -330,7 +337,7 @@ h1 {
     display: flex;
     height: 52px;
     border-radius: 12px;
-    background-color:  var(--bg-light-blue);
+    background-color: var(--bg-light-blue);
 }
 
 .advantages__card:nth-child(1) {
@@ -381,7 +388,7 @@ h1 {
     text-align: center;
 }
 
-.our-news__item img{
+.our-news__item img {
     border-radius: 12px;
     width: 100%;
 }
@@ -450,7 +457,7 @@ h1 {
 }
 
 .shops__city {
-    position:  relative;
+    position: relative;
     margin-top: 20px;
 }
 
@@ -539,7 +546,7 @@ h1 {
     display: flex;
 }
 
-.mobile-menu__local .icon-and-label p{
+.mobile-menu__local .icon-and-label p {
     font-size: 16px;
     font-weight: 600;
     line-height: 1.5;
@@ -563,6 +570,7 @@ h1 {
     line-height: 1.5;
     color: var(--label-white);
 }
+
 .mobile-menu__catalog img {
     position: absolute;
     right: 11px;
@@ -695,8 +703,7 @@ h1 {
 }
 
 
-
-.catalog__header{
+.catalog__header {
     display: flex;
     width: 100%;
     padding: 10px 0;
@@ -732,6 +739,7 @@ h1 {
 .catalog__item {
     align-items: center;
 }
+
 .catalog__item:last-child {
     border: none;
 }
@@ -854,12 +862,12 @@ h1 {
 .input:hover + label,
 .input:focus + label,
 .filled + label,
-.filled + label{
+.filled + label {
     font-size: 14px;
     top: 8px;
 }
 
-.input:not(:focus).filled  {
+.input:not(:focus).filled {
     border: 1px solid var(--separator-grey);
     background: var(--system-grey);
 }
@@ -940,7 +948,7 @@ h1 {
     margin-top: 16px;
 }
 
-.password input{
+.password input {
     padding-right: 44px;
 }
 
@@ -1098,7 +1106,7 @@ h1 {
     align-items: center;
 }
 
-.map__btn svg path{
+.map__btn svg path {
     stroke: var(--bg-white);
     margin: auto;
 }
@@ -1109,12 +1117,12 @@ h1 {
     height: 44px;
 }
 
-.map__btn:last-child svg{
+.map__btn:last-child svg {
     display: flex;
     fill: var(--bg-white);
 }
 
-.map__btn:last-child svg path{
+.map__btn:last-child svg path {
     margin: auto;
 
 }
@@ -1127,20 +1135,17 @@ h1 {
     }
 
     /* tab-bar table */
-
     .tab-bar__list {
         justify-content: center;
         gap: 32px;
     }
 
     /* banners */
-
     .banners {
         margin-top: 24px;
     }
 
     /* big banner */
-
     .banner-small {
         display: none;
     }
@@ -1151,13 +1156,11 @@ h1 {
     }
 
     /* advantages */
-
     .advantages-swiper {
         padding: 0 calc((100vw - 650px) / 2);
     }
 
     /* our news */
-
     .our-news__list {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-auto-rows: min-content;
@@ -1170,7 +1173,6 @@ h1 {
     }
 
     /* shops, ymap */
-
     .shops__bottom-shop {
         padding: 20px 0;
         border-top: 1px solid var(--separator-grey);
@@ -1196,7 +1198,7 @@ h1 {
 
 }
 
-@media screen and (min-width:  1510px) {
+@media screen and (min-width: 1510px) {
     body {
         margin-bottom: 0;
     }
@@ -1214,7 +1216,6 @@ h1 {
     }
 
     /*  header-desktop  */
-
     .header-desktop {
         display: block;
     }
@@ -1283,7 +1284,7 @@ h1 {
     .navigation-item:hover svg path {
         stroke: var(--accent-blue-1);
     }
-    
+
     .about-company-links {
         display: none;
         position: absolute;
@@ -1315,7 +1316,6 @@ h1 {
     }
 
     /*  Header right-bottom  */
-
     .right__bottom {
         margin-top: 12px;
         display: flex;
@@ -1357,7 +1357,7 @@ h1 {
         cursor: pointer;
     }
 
-    .clear-search-value:hover path{
+    .clear-search-value:hover path {
         stroke: #212328
     }
 
@@ -1405,6 +1405,7 @@ h1 {
     .right__favorite:hover svg path {
         fill: var(--accent-blue-1);
     }
+
     .right__basket:hover svg path {
         stroke: var(--accent-blue-1);
     }
@@ -1416,7 +1417,7 @@ h1 {
         cursor: pointer;
     }
 
-    .right__sign p{
+    .right__sign p {
         color: var(--label-black);
         font-size: 14px;
         font-weight: 500;
@@ -1424,10 +1425,7 @@ h1 {
     }
 
 
-
-
     /*  Banners desktop  */
-
     .banners {
         margin-top: 10px;
     }
@@ -1474,7 +1472,6 @@ h1 {
     }
 
     /*  advantages  */
-
     .advantages-swiper {
         display: none;
     }
@@ -1543,7 +1540,6 @@ h1 {
     }
 
     /*  big banner  */
-
     .big-banner {
         cursor: pointer;
     }
@@ -1557,7 +1553,6 @@ h1 {
     }
 
     /*  shops  */
-
     .shops__top-mobile {
         display: none;
     }
@@ -1593,7 +1588,6 @@ h1 {
     }
 
     /*  sign in  */
-
     .sign {
         width: 100%;
         align-items: center;
@@ -1620,7 +1614,7 @@ h1 {
         margin-top: 0;
     }
 
-    .sign__top p{
+    .sign__top p {
         font-size: 22px;
     }
 
@@ -1634,7 +1628,7 @@ h1 {
         background: var(--accent-blue-2);
     }
 
-    .sign__close:hover svg path{
+    .sign__close:hover svg path {
         stroke: var(--bg-white);
     }
 
@@ -1691,7 +1685,6 @@ h1 {
     }
 
     /*  Balloon  */
-
     .balloon {
         display: none;
         position: absolute;
@@ -1711,8 +1704,6 @@ h1 {
     }
 
     /*  ymap  */
-
-
     .map__btns {
         gap: 0;
         top: 254px;
@@ -1782,7 +1773,7 @@ h1 {
         line-height: 1.4;
     }
 
-    .catalog-desktop__item:hover svg path{
+    .catalog-desktop__item:hover svg path {
         stroke: var(--accent-blue-2);
     }
 
@@ -1842,7 +1833,6 @@ h1 {
     }
 
     /*  catalog desktop subcategory  */
-
     .catalog-desktop__subcategory {
         display: none;
         position: absolute;
@@ -1878,7 +1868,6 @@ h1 {
     }
 
     /*  catalog swiper  */
-
     .catalog__swiper-out {
         height: 400px;
         position: relative;
