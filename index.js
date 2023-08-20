@@ -169,6 +169,7 @@ function createError(input, errorText) {  // создаем вспомогате
 
 const slider = document.querySelector('.swiper')
 const cards = document.querySelector(".advantages-swiper")
+const catalogSwiper = document.querySelector(".catalog__swiper")
 
 new Swiper(slider, {    // Свайпер для баннеров
     spaceBetween: 20,
@@ -184,6 +185,10 @@ new Swiper(slider, {    // Свайпер для баннеров
             spaceBetween: 10,
         }
     },
+    autoplay: {
+        enabled: true,
+        delay: 3000
+    }
 });
 
 new Swiper(cards, {   // Свайпер для преимуществ
@@ -193,7 +198,22 @@ new Swiper(cards, {   // Свайпер для преимуществ
         momentumBounce: false
     },
     momentumBounce: false,
-    slidesPerView: "auto"
+    slidesPerView: "auto",
+});
+
+new Swiper(catalogSwiper, {   // Свайпер для каталога
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.catalog-swiper-button-next',
+        prevEl: ".catalog-swiper-button-prev"
+    },
+    pagination: {
+        el: '.catalog-swiper-pagination',
+    },
+    autoplay: {
+        enabled: true,
+        delay: 3000
+    }
 });
 
 
@@ -267,22 +287,22 @@ function init() {
     const shop1 = document.querySelector("#shop1")
     const shop2 = document.querySelector("#shop2")
 
-    shop1.addEventListener("click", () => {
+    shop1.addEventListener("click", () => {  // переход к точке на карте
         map.setCenter(simaLand, 15);
     })
 
-    shop2.addEventListener("click", () => {
+    shop2.addEventListener("click", () => {  // переход к точке на карте
         map.setCenter(bluchera, 15);
     })
 
     const zoomIn = document.querySelector("#zoomIn")
     const zoomOut = document.querySelector("#zoomOut")
 
-    zoomIn.addEventListener("click", () => {
+    zoomIn.addEventListener("click", () => {  // зум на карте
         map.setZoom(map.getZoom() + 1);
     })
 
-    zoomOut.addEventListener("click", () => {
+    zoomOut.addEventListener("click", () => {  // отдаление на карте
         map.setZoom(map.getZoom() - 1);
     })
 }
@@ -332,7 +352,7 @@ const catalog = document.querySelector(".catalog")
 const menuCatalog = document.querySelector(".mobile-menu__catalog")
 const closeCatalogBtn = document.querySelector("#catalog-close")
 
-const catalogBtnDesktop = document.querySelector(".right__catalog-button")
+const catalogBtnDesktop = document.querySelectorAll(".right__catalog-button")
 const openCatalogDesktop = document.querySelector(".open-catalog")
 const closeCatalogDesktop = document.querySelector(".close-catalog")
 const desktopCatalog = document.querySelector('.desktop-catalog')
@@ -350,11 +370,21 @@ closeCatalogBtn.addEventListener("click", () => {
     toggleMenuVision()
 })
 
-catalogBtnDesktop.addEventListener("click", () => {
-    openCatalogDesktop.classList.toggle('catalog-svg-hidden')
-    closeCatalogDesktop.classList.toggle('catalog-svg-hidden')
-    desktopCatalog.classList.toggle('desktop-catalog-hidden')
-    main.classList.toggle('main-hidden')
+catalogBtnDesktop.forEach(el => {  // открытие и закрытие каталога на пк версии
+    el.addEventListener("click", () => {
+        if (desktopCatalog.classList.contains("desktop-catalog-hidden")) {
+            openCatalogDesktop.classList.add('catalog-svg-hidden')
+            closeCatalogDesktop.classList.remove('catalog-svg-hidden')
+            desktopCatalog.classList.remove('desktop-catalog-hidden')
+            main.classList.add('main-hidden')
+        } else {
+            openCatalogDesktop.classList.remove('catalog-svg-hidden')
+            closeCatalogDesktop.classList.add('catalog-svg-hidden')
+            desktopCatalog.classList.add('desktop-catalog-hidden')
+            main.classList.remove('main-hidden')
+        }
+    })
+
 })
 
 
