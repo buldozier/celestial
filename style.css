@@ -132,7 +132,7 @@ h1 {
 /* styles */
 
 .container {
-    min-width: 373px;
+    width: 375px;
     padding: 0 15px;
     margin: 0 auto;
 
@@ -283,6 +283,7 @@ h1 {
 
 .banner-small {
     display: block;
+    width: 100%;
 }
 
 .banner-medium {
@@ -318,7 +319,7 @@ h1 {
 }
 
 .advantages-swiper {
-    padding: 0 calc((100vw - 343px) / 2);
+    padding: 0 calc((100vw - 345px) / 2);
 }
 
 .advantages__list {
@@ -1146,6 +1147,7 @@ h1 {
 
     .banner-medium {
         display: block;
+        width: 100%;
     }
 
     /* advantages */
@@ -1468,6 +1470,7 @@ h1 {
 
     .banner-large {
         display: block;
+        width: 100%;
     }
 
     /*  advantages  */
