@@ -1,4 +1,16 @@
-// Inputs
+// Search input
+
+const searchInput = document.querySelector('#search')
+const clearSearch = document.querySelector(".clear-search-value")
+
+clearSearch.addEventListener("click", () => {
+    searchInput.value = ''
+})
+
+
+
+
+// Sign in
 
 const allInputs = document.querySelectorAll("input")
 const signBlock = document.querySelector(".sign")
@@ -6,10 +18,16 @@ const inputPassword = document.querySelector('.password input')
 const showPasswordBtn = document.querySelector(".show-password")
 const showPasswordSvg = document.querySelector("#hide")
 const hidePasswordSvg = document.querySelector("#show")
-const showSignBtn = document.querySelector("#show-sign")
+const showSignBtns = document.querySelectorAll(".show-sign-in")
 const closeSignBtn = document.querySelector('#close-sign')
+const profileSignInBtn = document.querySelectorAll(".sign-in-profile")
+const notification = document.querySelectorAll(".notification")
 
-allInputs.forEach(el => {
+
+let profileSignIn = false;
+
+
+allInputs.forEach(el => {  // если в инпутах есть текст, то добавляется стиль
     el.addEventListener("input", () => {
         if (el.value === '') {
             el.classList.remove("filled")
@@ -20,7 +38,7 @@ allInputs.forEach(el => {
     })
 })
 
-showPasswordBtn.addEventListener('click', () => {
+showPasswordBtn.addEventListener('click', () => {  // показываем или скрываем пароль
     showPasswordSvg.classList.toggle('show')
     hidePasswordSvg.classList.toggle('show')
 
@@ -31,21 +49,56 @@ showPasswordBtn.addEventListener('click', () => {
     }
 })
 
-showSignBtn.addEventListener("click", () => {
+showSignBtns.forEach(el => {
+    el.addEventListener("click", () => {  // слушатель на кнопку показа формы регистрации
+        console.log('click')
+        toggleSignBlock()
+    })
+})
+
+signBlock.addEventListener("click", () => {  // закрытие формы на компьютерах при нажатии вне формы
+
+    if (window.innerWidth >= 1510) {
+        toggleSignBlock()
+    }
+})
+
+const signInner = document.querySelector('.sign__inner')
+
+signInner.addEventListener("click", (e) => {
+    e.stopPropagation()
+})
+
+closeSignBtn.addEventListener("click", () => {  // слушатель на кнопку закрытия формы регистрации
     toggleSignBlock()
 })
 
-closeSignBtn.addEventListener("click", () => {
-    toggleSignBlock()
-})
-
-function toggleSignBlock() {
+function toggleSignBlock() {  // показ или сокрытие формы регистрации, в случае закрытия - очищение инпутов
     signBlock.classList.toggle('sign-show')
+    signBlock.querySelectorAll("input").forEach(el => {
+        removeError(el)
+        el.value = ''
+        el.classList.remove("filled")
+    })
     if (signBlock.classList.contains("sign-show")) {
         document.body.style.overflow = 'hidden';
     } else {
         document.body.style.overflow = '';
     }
+
+    if(profileSignIn === true) {
+        showSignBtns.forEach(el => {
+            el.remove()
+        })
+        profileSignInBtn.forEach(el => {
+            el.classList.remove('sign-in-profile-hidden')
+        })
+        notification.forEach(el => {
+            console.log(123)
+            el.classList.remove('notification-hidden')
+        })
+    }
+
 }
 
 
@@ -55,25 +108,17 @@ function toggleSignBlock() {
 
 const signForm = document.querySelector("#sign-form")
 
-signForm.addEventListener("submit", (e) => {
+signForm.addEventListener("submit", (e) => {  // отправка формы
     e.preventDefault()
-    console.log("отправка формы...")
 
     if (validationForm(signForm) === true) {
-        console.log("Форма успешно отправлена!")
-        signForm.querySelectorAll("input").forEach(el => {
-            el.value = ''
-            el.classList.remove("filled")
-        })
+        profileSignIn = true
         toggleSignBlock()
-    } else {
-        console.log("Валидация не пройдена!")
     }
 
-    document.body.style.overflow = '';
 })
 
-function validationForm(form) {
+function validationForm(form) {  // валидация формы, проверка на непустое значение
     let result = true
 
     form.querySelectorAll("input").forEach(el => {
@@ -99,7 +144,7 @@ function validationForm(form) {
 }
 
 
-function removeError(input) {
+function removeError(input) {  // убираем вспомогательные ошибки под инпутами
     const parent = input.parentNode
 
     if (input.classList.contains("input-error")) {
@@ -109,7 +154,7 @@ function removeError(input) {
     }
 }
 
-function createError(input, errorText) {
+function createError(input, errorText) {  // создаем вспомогательные ошибки под инпутами
     const parent = input.parentNode
     const errorLabel = document.createElement("p")
 
@@ -125,14 +170,23 @@ function createError(input, errorText) {
 const slider = document.querySelector('.swiper')
 const cards = document.querySelector(".advantages-swiper")
 
-const swiper = new Swiper(slider, {    // Свайпер для баннеров
+new Swiper(slider, {    // Свайпер для баннеров
     spaceBetween: 20,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: ".swiper-button-prev"
+    },
     pagination: {
         el: '.swiper-pagination',
     },
+    breakpoints: {
+        1510: {
+            spaceBetween: 10,
+        }
+    },
 });
 
-const swiperCards = new Swiper(cards, {   // Свайпер для преимуществ
+new Swiper(cards, {   // Свайпер для преимуществ
     spaceBetween: 11,
     freeMode: {
         enabled: true,
@@ -150,6 +204,7 @@ const swiperCards = new Swiper(cards, {   // Свайпер для преиму�
 const center = [56.81026238291606,60.702395378276364];  // изначальное положение карты
 const simaLand = [56.76026624427634,60.75189737924261];  // положение точки СимаЛенда
 const bluchera = [56.86513061727475,60.668144852443696]  // положение точки на Блюхера
+let zoom = 10
 
 const simaLandData = {
     header: "Магазин на Черняховского",
@@ -168,14 +223,13 @@ const blucheraData = {
 function init() {
     let map = new ymaps.Map('map', {    // создание карты
         center: center,
-        zoom: 10
+        zoom: zoom
     });
 
     let simaLandMark = new ymaps.Placemark(simaLand, {}, {  // создание точки для СимаЛенда
         iconLayout: 'default#image',
         iconImageHref: 'img/icons/pin_logo.svg',
         iconImageSize: [72, 81],
-        hideIconOnBalloonOpen: false,
     });
 
     let blucheraMark = new ymaps.Placemark(bluchera, {}, {  // создание точки для Блюхера
@@ -202,21 +256,44 @@ function init() {
     const balloonPhone = document.querySelector(".balloon__content-phone")
     const balloonWorkTime = document.querySelector(".balloon__content-workTime")
 
-    simaLandMark.events.add('click', function () {     // добавляем слушатель нажатия для открытия баллуна
-        balloonHeader.innerHTML = simaLandData.header
-        balloonAddress.innerHTML = simaLandData.address
-        balloonPhone.innerHTML = simaLandData.phone
-        balloonWorkTime.innerHTML = simaLandData.workTime
-        balloonInit()
-    });
+    simaLandMark.events.add('click', () => {
+        balloonData(map, balloonHeader, balloonAddress, balloonPhone, balloonWorkTime, simaLandData, simaLand)
+    })
 
-    blucheraMark.events.add('click', function () {     // добавляем слушатель нажатия для открытия баллуна
-        balloonHeader.innerHTML = blucheraData.header
-        balloonAddress.innerHTML = blucheraData.address
-        balloonPhone.innerHTML = blucheraData.phone
-        balloonWorkTime.innerHTML = blucheraData.workTime
-        balloonInit()
-    });
+    blucheraMark.events.add('click', () => {
+        balloonData(map, balloonHeader, balloonAddress, balloonPhone, balloonWorkTime, blucheraData, bluchera)
+    })
+
+    const shop1 = document.querySelector("#shop1")
+    const shop2 = document.querySelector("#shop2")
+
+    shop1.addEventListener("click", () => {
+        map.setCenter(simaLand, 15);
+    })
+
+    shop2.addEventListener("click", () => {
+        map.setCenter(bluchera, 15);
+    })
+
+    const zoomIn = document.querySelector("#zoomIn")
+    const zoomOut = document.querySelector("#zoomOut")
+
+    zoomIn.addEventListener("click", () => {
+        map.setZoom(map.getZoom() + 1);
+    })
+
+    zoomOut.addEventListener("click", () => {
+        map.setZoom(map.getZoom() - 1);
+    })
+}
+
+function balloonData (map, balloonHeader, balloonAddress, balloonPhone, balloonWorkTime, Data, position) {     // добавляем слушатель нажатия для открытия баллуна
+    balloonHeader.innerHTML = Data.header
+    balloonAddress.innerHTML = Data.address
+    balloonPhone.innerHTML = Data.phone
+    balloonWorkTime.innerHTML = Data.workTime
+    balloonInit()
+    map.setCenter(position, 15);
 }
 
 ymaps.ready(init);
@@ -255,6 +332,11 @@ const catalog = document.querySelector(".catalog")
 const menuCatalog = document.querySelector(".mobile-menu__catalog")
 const closeCatalogBtn = document.querySelector("#catalog-close")
 
+const catalogBtnDesktop = document.querySelector(".right__catalog-button")
+const openCatalogDesktop = document.querySelector(".open-catalog")
+const closeCatalogDesktop = document.querySelector(".close-catalog")
+const desktopCatalog = document.querySelector('.desktop-catalog')
+
 catalogGoBackBtn.addEventListener("click", () => {
     toggleCatalogVision()
     toggleMenuVision()
@@ -268,9 +350,19 @@ closeCatalogBtn.addEventListener("click", () => {
     toggleMenuVision()
 })
 
+catalogBtnDesktop.addEventListener("click", () => {
+    openCatalogDesktop.classList.toggle('catalog-svg-hidden')
+    closeCatalogDesktop.classList.toggle('catalog-svg-hidden')
+    desktopCatalog.classList.toggle('desktop-catalog-hidden')
+    main.classList.toggle('main-hidden')
+})
+
+
+
 function toggleCatalogVision () {
     catalog.classList.toggle("catalog-hidden") // открытие, закрытие каталога
 }
+
 
 
 
@@ -524,19 +616,23 @@ balloon.addEventListener('click', (event) => {
     event.stopPropagation(); // остановим событие на дочернем элементе
 });
 
-balloonCloseBtn.addEventListener('click', () => {
+balloonCloseBtn.addEventListener('mousedown', () => {
     closeBalloon()
 });
 
 function balloonInit() {  // добавляем открытие баллуна и запрещаем скролл при открытом баллуне
     balloon.classList.add("balloon-active")
-    document.body.style.overflow = 'hidden';
-    document.body.addEventListener("click", () => {
-        closeBalloon()
-    })
+    if (window.innerWidth <= 1510) {
+        document.body.style.overflow = 'hidden';
+    }
+    setTimeout(() => {
+        document.body.addEventListener("click", closeBalloon)
+    },200)
+
 }
 
 function closeBalloon () {  // закрываем баллун и разрешаем скролл
     balloon.classList.remove('balloon-active')
     document.body.style.overflow = '';
+    document.body.removeEventListener("click", closeBalloon)
 }
