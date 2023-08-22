@@ -113,6 +113,7 @@ html {
 
 body {
     font-family: Golos Text VF, serif;
+    body: 100vh;
     line-height: 1;
     font-size: 16px;
     color: var(--label-black);
@@ -147,7 +148,7 @@ h1 {
 
 @media screen and (max-width: 390px) {
     .container {
-        width: calc(100% - 30px);
+        width: calc(100vw - 47px);
         padding: 0;
 
     }
@@ -341,7 +342,7 @@ h1 {
 }
 
 .advantages-swiper {
-    padding: 0 calc((100vw - 345px) / 2);
+    padding: 0 calc((100% - 345px) / 2);
 }
 
 .advantages__list {
@@ -1172,7 +1173,7 @@ h1 {
 
     /* advantages */
     .advantages-swiper {
-        padding: 0 calc((100vw - 650px) / 2);
+        padding: 0 calc((100% - 650px) / 2);
     }
 
     /* our news */
