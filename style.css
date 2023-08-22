@@ -113,7 +113,6 @@ html {
 
 body {
     font-family: Golos Text VF, serif;
-    height: 100%;
     line-height: 1;
     font-size: 16px;
     color: var(--label-black);
