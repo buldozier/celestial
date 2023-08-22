@@ -224,11 +224,11 @@ function init() {
     });
 
     let simaLandMark = new ymaps.Placemark(simaLand, {}, {  // создание точки для СимаЛенда
-        iconLayout: "default#image", iconImageHref: "img/icons/pin_logo.svg", iconImageSize: [72, 81],
+        iconLayout: "default#image", iconImageHref: "img/icons/pin_logo.svg", iconImageSize: [72, 81], iconImageOffset: [-36, -60],
     });
 
     let blucheraMark = new ymaps.Placemark(bluchera, {}, {  // создание точки для Блюхера
-        iconLayout: "default#image", iconImageHref: "img/icons/pin_logo.svg", iconImageSize: [72, 81],
+        iconLayout: "default#image", iconImageHref: "img/icons/pin_logo.svg", iconImageSize: [72, 81], iconImageOffset: [-36, -60],
 
     });
 
