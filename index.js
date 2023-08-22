@@ -262,10 +262,12 @@ function init() {
 
     shop1.addEventListener("click", () => {  // переход к точке на карте
         map.setCenter(simaLand, 15)
+        balloonData(map, balloonHeader, balloonAddress, balloonPhone, balloonWorkTime, simaLandData, simaLand)
     })
 
     shop2.addEventListener("click", () => {  // переход к точке на карте
         map.setCenter(bluchera, 15)
+        balloonData(map, balloonHeader, balloonAddress, balloonPhone, balloonWorkTime, blucheraData, bluchera)
     })
 
     const zoomIn = document.querySelector("#zoomIn")
@@ -556,6 +558,7 @@ balloonCloseBtn.addEventListener("mousedown", () => {
 });
 
 function balloonInit() {  // добавляем открытие баллуна и запрещаем скролл при открытом баллуне
+    closeBalloon()
     balloon.classList.add("balloon-active")
     if (window.innerWidth <= 1510) {
         document.body.style.overflow = "hidden"
