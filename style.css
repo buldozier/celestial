@@ -146,6 +146,22 @@ h1 {
 
 }
 
+@media screen and (max-width: 375px) {
+    .container {
+        width: calc(100% - 30px);
+        padding: 0;
+
+    }
+
+    .advantages-swiper {
+        padding: 0 15px !important;
+    }
+
+    .tab-bar__item {
+        width: calc(100vw / 5) !important;
+    }
+}
+
 /* header-mobile */
 
 .header-desktop {
